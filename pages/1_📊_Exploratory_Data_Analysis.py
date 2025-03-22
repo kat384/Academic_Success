@@ -7,7 +7,6 @@ st.set_page_config(page_title="Exploratory Data Analysis", page_icon="📊", lay
 
 st.title('Exploratory Data Analysis (EDA)')
 
-
 st.subheader('1.Read Data')
 with st.expander("Dataset, description"):
     st.dataframe(df, use_container_width=True)

@@ -21,7 +21,6 @@ with col1:
 with col3:
     st.plotly_chart(fig_target)
 
-
 st.write("######")
 
 col1, col2, col3 = st.columns([10,1,5])
