@@ -28,6 +28,3 @@ with col3:
                 dt = DecisionTreeClassifier(max_depth=3)
                 dt.fit(df[initial_features], df.Target)
             ''')
-
-
-

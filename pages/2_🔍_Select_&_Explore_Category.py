@@ -103,7 +103,3 @@ elif feature_type == 'Categorical':
                                      opacity=0.7, color_discrete_sequence=px.colors.qualitative.Set2)
 
         st.plotly_chart(selected_plot)
-
-
-
-

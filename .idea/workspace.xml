@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="067d8d32-30b0-4ffe-a555-cf85056c2693" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Academic_success_.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Summary.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/1__Exploratory_Data_Analysis.py" afterPathEscaped="$PROJECT_DIR$/pages/1_📊_Exploratory_Data_Analysis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/2__Select_&amp;_Explore_Category.py" afterPathEscaped="$PROJECT_DIR$/pages/2_🔍_Select_&amp;_Explore_Category.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/2__Machine_Learning_Model.py" afterPathEscaped="$PROJECT_DIR$/pages/2_🤖_Machine_Learning_Model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/4__Feature_Importance.py" afterPathEscaped="$PROJECT_DIR$/pages/4_📈_Feature_Importance.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/5__Predict_Success.py" afterPathEscaped="$PROJECT_DIR$/pages/5_🌟_Predict_Success.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/train.csv" afterDir="false" />
-    </list>
+    <list default="true" id="067d8d32-30b0-4ffe-a555-cf85056c2693" name="Changes" comment="Commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,6 +59,23 @@
       <option name="presentableId" value="Default" />
       <updated>1741703296021</updated>
     </task>
+    <task id="LOCAL-00001" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1742660913095</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742660913095</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1742661116676</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742661116676</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -86,5 +88,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
   </component>
 </project>

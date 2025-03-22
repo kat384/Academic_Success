@@ -30,6 +30,7 @@ st.dataframe(result, use_container_width=True)
 rfc_model = joblib.load("random_forest_model.pkl")
 class_mapping = {0: "Dropout", 1: "Enrolled", 2: "Graduate"}
 
+
 st.title("Student-Specific Success Prediction")
 st.write(
     'Below are the top features influencing the prediction by Random Forest Feature Importance Analysis. All other features are predefined with median value. Hidden features have less influence on outcome, in real-life situation they all can be manually edited for precise result. \n\n'

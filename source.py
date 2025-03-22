@@ -104,7 +104,6 @@ fig_target.update_layout(
     paper_bgcolor='white'
 )
 
-
 # ### 2.2. Numerical features vs 'Target'.
 
 numerical_features = df.columns[[7, 13, 20, 26, 32, 34, 35, 36]]
