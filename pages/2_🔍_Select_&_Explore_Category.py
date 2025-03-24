@@ -4,10 +4,22 @@ import plotly.express as px
 
 from source import df
 
+   # Set page configuration
+st.set_page_config(page_title="Feature Visualization", page_icon="📊", layout="wide")
+
+st.markdown(
+    """
+    <style>
+    body, p, div {
+        font-size: 13px !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 numerical_features = df.columns[[7, 13, 20, 26, 32, 34, 35, 36]]
 categorical_features = df.columns.drop(numerical_features).drop('id').drop('Target')
-
 
 numerical_explanations = {
     "Previous qualification (grade)": "The data is mostly evenly distributed with outliers in each category. Graduates tend to have higher qualification grades, while dropouts have lower grades. Enrolled students have a wider range of grades, slightly lower than the graduates but higher than the dropouts.",
@@ -53,10 +65,8 @@ categorical_explanations = {
     "Curricular units 2nd sem (without evaluations)": "The vast majority of students belong to a single category in these features, meaning they do not provide significant variation for analysis."
 }
 
-    # Set page configuration
-st.set_page_config(page_title="Feature Visualization", page_icon="📊", layout="wide")
 
-st.header("Exploratory Data Analysis")
+st.title("Select & Explore Feature. Relation to Academic Success")
 
 feature_type = st.selectbox('Select feature type for analysis', ['Numerical', 'Categorical'])
 

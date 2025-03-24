@@ -34,6 +34,18 @@ rf_cv_avg = 0.8253
 
 st.title("Machine Learning Model")
 
+st.markdown(
+    """
+    <style>
+    body, p, div {
+        font-size: 13px !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.write('We will train models on historical data to develop a system to analyze new student data and predict outcomes.This enables institutions to take proactive steps in student engagement. Let\'s test two ML models to select the most accurate one for final prediction.')
 code = '''# Prepare Features & Target
 X = df.drop(['Target', 'id'], axis=1)
 y = df['Target']
@@ -78,7 +90,6 @@ col1, col2, col3 = st.columns([8, 1, 8])
 with col1:
     # Accuracy
     st.subheader("Logistic Regression Classifier")
-    st.write(f"**Accuracy:** {logit_accuracy:.4f}")
     st.markdown("""
     - The Logistic Regression model achieved an accuracy of **80.83%** on the test set.
     - The model performed well in predicting **Graduates (0)** with **88% precision** and **80% recall**.
@@ -87,24 +98,8 @@ with col1:
     - The confusion matrix shows that many **Enrolled students (1)** were misclassified as **Dropouts (2)** or **Graduates (0)**.
     """)
 
-    st.subheader("Logistic Regression - Classification Report")
-    st.text(logit_cr)
-
-    st.subheader("Logistic Regression - Confusion Matrix")
-    fig, ax = plt.subplots(figsize=(6, 4))
-    sns.heatmap(logit_cm, annot=True, fmt='d', cmap="Set2", xticklabels=["Graduates", "Enrolled", "Dropouts"], yticklabels=["Graduates", "Enrolled", "Dropouts"])
-    plt.xlabel("Predicted")
-    plt.ylabel("Actual")
-    st.pyplot(fig)
-
-    st.subheader("Logistic Regression - Cross-validation Scores")
-    st.write(f"Cross-validation scores: {logit_cv_scores}")
-    st.write(f"**Average cross-validation score**: {logit_cv_avg:.4f}")
-
-# Random Forest Results
 with col3:
     st.subheader("Random Forest Classifier")
-    st.write(f"**Accuracy:** {rf_accuracy:.4f}")
     st.markdown("""
     - The Random Forest model achieved an accuracy of **83.09%** on the test set.
     - It performed well in predicting **Graduates (0)** with **90% precision** and **81% recall**.
@@ -113,16 +108,36 @@ with col3:
     - The confusion matrix shows misclassifications, especially between **Enrolled** and the other two categories.
     """)
 
-    st.subheader("Random Forest - Classification Report")
+col1, col2, col3 = st.columns([8, 1, 8])
+with col1:
+    st.subheader(f"**Accuracy:** {logit_accuracy:.4f}")
+    st.subheader("Classification Report")
+    st.text(logit_cr)
+
+    st.subheader("Confusion Matrix")
+    fig, ax = plt.subplots(figsize=(6, 4))
+    sns.heatmap(logit_cm, annot=True, fmt='d', cmap="Set2", xticklabels=["Graduates", "Enrolled", "Dropouts"], yticklabels=["Graduates", "Enrolled", "Dropouts"])
+    plt.xlabel("Predicted")
+    plt.ylabel("Actual")
+    st.pyplot(fig)
+
+    st.subheader("Cross-validation Scores")
+    st.write(f"Cross-validation scores: {logit_cv_scores}")
+    st.write(f"**Average cross-validation score**: {logit_cv_avg:.4f}")
+
+# Random Forest Results
+with col3:
+    st.subheader(f"**Accuracy:** {rf_accuracy:.4f}")
+    st.subheader("Classification Report")
     st.text(rf_cr)
 
-    st.subheader("Random Forest - Confusion Matrix")
+    st.subheader("Confusion Matrix")
     fig, ax = plt.subplots(figsize=(6, 4))
     sns.heatmap(rf_cm, annot=True, fmt='d', cmap="Set2", xticklabels=["Graduates", "Enrolled", "Dropouts"], yticklabels=["Graduates", "Enrolled", "Dropouts"])
     plt.xlabel("Predicted")
     plt.ylabel("Actual")
     st.pyplot(fig)
 
-    st.subheader("Random Forest - Cross-validation Scores")
+    st.subheader("Cross-validation Scores")
     st.write(f"Cross-validation scores: {rf_cv_scores}")
     st.write(f"**Average cross-validation score**: {rf_cv_avg:.4f}")

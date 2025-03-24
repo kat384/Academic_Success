@@ -6,6 +6,27 @@ from source import  Figure_f, fig_target, fig_2
 
 st.set_page_config(page_title="Academic Success Prediction", page_icon="🎓", layout="wide")
 
+st.markdown(
+    """
+    <style>
+    body, p, div {
+        font-size: 13px !important;
+    }
+
+    .metric-label {
+        font-size: 24px !important;
+        font-weight: bold;
+    }
+    .metric-value {
+        font-size: 32px !important;
+        t-weight: bold;
+        color: #1f77b4;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.title ('Academic Success Analysis and Prediction: A Data-Driven Approach')
 st.write("######")
 
@@ -13,15 +34,13 @@ col1, col2, col3 = st.columns([5, 1, 10])
 with col1:
     st.subheader('Problem')
     st.write('Educational institutions struggle with high dropout rates, impacting both students futures and institutional success.')
-    st.subheader('\nKey Business Questions\n')
+    st.subheader('\nKey Business Questions')
     st.markdown('- What are the key factors affecting student success? (Grades, socio-economic status, parental education?)\n'
                  '\n- Can we identify patterns in student dropouts vs. graduates?\n'
                  '\n- Can we predict which students are at risk?\n'
                  '\n- Are there missing pieces? (We lack behavioral & psychological data—how does this impact our insights?)\n')
 with col3:
     st.plotly_chart(fig_target)
-
-st.write("######")
 
 col1, col2, col3 = st.columns([10,1,5])
 with col1:
@@ -45,7 +64,7 @@ with col3:
 
 st.write("######")
 
-st.header('Machine Learning. Logistic Regression Classifier, Random Forrest Classifier')
+st.header('Machine Learning Model. Logistic Regression, Random Forrest Classifiers ')
 st.write('By training models on historical data, we developed a system to analyze new student data and predict outcomes, enabling institutions to take proactive steps in student engagement. After testing two ML models, we selected the most accurate one for final predictions based on performance.')
 col1, col2, col3, col4 = st.columns([5,5,1,5])
 
@@ -58,16 +77,18 @@ with col1:
     """)
 
 with col2:
-    st.subheader("The Random Forest model")
+    st.subheader("The Random Forest")
     st.markdown("""The model performed well in predicting Graduates with 90% precision and 81% recall. Enrolled students were predicted with lower precision 64% and recall 63%, suggesting difficulty in distinguishing them from the other classes.
     Dropouts were classified with 86% precision and 92% recall, indicating that the model is very good at predicting this group.
     The confusion matrix shows some level of misclassifications between Enrolled and the other two categories.""")
 
 
 with col4:
-    st.metric(label="Logistic Regression Accuracy", value="80.83%", delta="0.0%", delta_color="off")
-    placeholder = st.empty()
-    st.metric(label="Random Forest Accuracy", value="83.09%", delta="+2.26%")
+    st.markdown('Logistic Regression Accuracy')
+    st.markdown('<p class="metric-value">80.83%</p>', unsafe_allow_html=True)
+
+    st.markdown('Random Forest Accuracy')
+    st.markdown('<p class="metric-value">83.09%</p>', unsafe_allow_html=True)
 
 st.write("#####")
 
@@ -102,7 +123,7 @@ with col1:
             text-align: center;
             background-color: #66c2a5; 
             color: white;
-            font-size: 20px; 
+            font-size: 16px; 
             font-weight: bold;
             padding: 10px 20px; 
             border-radius: 10px; 
@@ -119,8 +140,8 @@ with col1:
         }
 
         .big-button a {
-            color: black; /* Set text color to black */
-            text-decoration: none; /* Remove underline */
+            color: black; 
+            text-decoration: none; 
         }
         </style>
         <div style='text-align: center;'>
@@ -177,7 +198,7 @@ with col2:
         'Tuition fees up to date': 1,  # Assume tuition is paid
     })
 
-    # Create DataFrame with correct feature order
+
     preview_df = pd.DataFrame([default_values])[training_features]
 
     # Predict
@@ -187,7 +208,7 @@ with col2:
     # Display Prediction
     st.markdown(f"""
         <div style='text-align: left; font-size: 20px; font-weight: bold; color: black;'>
-            Preview Prediction: <span style='color: #fc8d62;'>{predicted_label}</span>
+            Preview Prediction: <span style='color: red;'>{predicted_label}</span>
         </div>
     """, unsafe_allow_html=True)
 

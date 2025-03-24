@@ -7,6 +7,17 @@ from source import result, df_test
 st.set_page_config(page_title="Predict_Success", page_icon="🌟", layout="wide")
 
 st.title('Test and Predict')
+
+st.markdown(
+    """
+    <style>
+    body, p, div {
+        font-size: 13px !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 st.subheader('We will proceed with Random Forest Model as it demonstrated stability and higher Accuracy. We\'ll take new dataset of students\' performance to check the model. We\'ll get results - predict class Graduated, Dropout or Enrolled for all students in dataset automatically.')
 with st.expander("Test dataset, description"):
     st.dataframe(df_test, use_container_width=True)

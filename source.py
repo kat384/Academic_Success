@@ -97,7 +97,7 @@ fig_target.add_trace(go.Pie(
 ), row=1, col=2)
 
 fig_target.update_layout(
-    height=470, width=1000,
+    height=460, width=1000,
     title_text="Academic Success Analysis",
     showlegend=False,
     plot_bgcolor='white',
@@ -124,7 +124,7 @@ for i, feature in enumerate(numerical_features):
 plt.tight_layout()
 
 # ### Observations
-num_obs1 = ('The data is mostly evenly distributed with outliers in each category.\n'
+num_obs1 = ('\nThe data is mostly evenly distributed with outliers in each category.\n'
             '\n**Previous qualification**\n'
             '\nGraduates tend to have higher qualification grades, while dropouts have lower grades. Enrolled students have a wider range of grades, slightly lower than the graduates but higher than the dropouts.\n\'\n'
             '\n'
@@ -163,9 +163,7 @@ for i, feature in enumerate(categorical_features):
 
 plt.tight_layout()
 
-cat_obs = ('#### Observations\n'
-           '\n'
-           ' **Marital Status:**  \n'
+cat_obs = (' **Marital Status:**  \n'
            'Most students belong to a single category—either married or single. Given the mean age of 22, we can assume most are single. Graduates are more common in this group, while Dropouts have a higher representation in the opposite category, presumably married.  \n'
            '\n'
            ' **Application Mode:**  \n'
@@ -222,7 +220,7 @@ lab_enc = LabelEncoder()
 df['Target'] = lab_enc.fit_transform(df['Target'])
 
 d_corr = df.corr()
-fig_heatmap = px.imshow(d_corr, height=700, width=700, color_continuous_scale='tealrose')
+fig_heatmap = px.imshow(d_corr, height=600, width=700, color_continuous_scale='tealrose')
 
 obs_heatmap = ('### Correlation to Target\n'
                '\n'
@@ -351,7 +349,7 @@ fig_fi = px.bar(top_features,
                 labels={'Importance': 'Feature Importance Score', 'Feature': 'Feature'},
                 color='Importance',
                 color_continuous_scale='sunset',
-                height=500)
+                height=450)
 
 fig_fi.update_layout(yaxis={'categoryorder': 'total ascending'})
 
@@ -435,10 +433,8 @@ fig_2.update_layout(
     ),
     showlegend=True,
     title="Comparison of Feature Importance Across Models",
-    height=550
+    height=500
 )
-
-
 
 #Funnel
 
@@ -465,7 +461,7 @@ Figure_f = px.funnel(funnel_df,
                      x='Stage',
                      title='Graduates flow',
                      color_discrete_sequence=['#559bbe'],  # Apply green color to all stages
-                     height=500)
+                     height=425)
 
 Figure_f.update_layout(
     plot_bgcolor='white',  # Set background of the plot area to white
